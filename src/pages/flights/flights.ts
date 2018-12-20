@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { SingleFlightPage } from './single-flight/single-flight';
 
 /**
  * Generated class for the FlightsPage page.
@@ -14,11 +15,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class FlightsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FlightsPage');
+  onLoadFlight(name: string) {
+    this.navCtrl.push(SingleFlightPage, {flightName: name});
   }
 
 }

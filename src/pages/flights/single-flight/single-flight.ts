@@ -14,11 +14,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SingleFlightPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  name: string;
+
+  constructor(public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SingleFlightPage');
+  ngOnInit() {
+    this.name = this.navParams.get('flightName');
+    
   }
 
 }
