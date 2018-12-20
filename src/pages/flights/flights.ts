@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SingleFlightPage } from './single-flight/single-flight';
+import { FlightsService } from '../../services/flights.service';
+import { Flight } from '../../models/Flight';
 
 /**
  * Generated class for the FlightsPage page.
@@ -15,7 +17,9 @@ import { SingleFlightPage } from './single-flight/single-flight';
 })
 export class FlightsPage {
 
-  constructor(public navCtrl: NavController) {
+  flights: Flight[];
+
+  constructor(public navCtrl: NavController, private flightsService: FlightsService) {
   }
 
   onLoadFlight(name: string) {

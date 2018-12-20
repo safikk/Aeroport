@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <button ion-button (click)="onGoToFlights()">Flights</button>
+  <button ion-button [navPush]="flightsPage">Flights</button>
 </ion-content>
 
 <ion-footer>

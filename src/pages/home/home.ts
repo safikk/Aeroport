@@ -15,11 +15,8 @@ import { FlightsPage } from '../flights/flights';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-  }
+  flightsPage = FlightsPage;
 
-  onGoToFlights() {
-    this.navCtrl.push(FlightsPage);
-  }
+
 
 }
