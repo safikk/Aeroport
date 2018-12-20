@@ -7,13 +7,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ name }}</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <p>Plus d'informations pour {{ name }}</p>
+  <p *ngFor="let line of flights"> </p>
+
+  {{ line }}
 
 </ion-content>

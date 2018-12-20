@@ -19,15 +19,15 @@ export class FlightsPage {
 
   flights: Flight[];
 
-  constructor(public navCtrl: NavController, private flightsService: FlightsService) {
+  constructor(public navCtrl: NavController,
+              private flightsService: FlightsService) {
   }
 
   ionViewDidLoad() {
     this.flights = this.flightsService.flights;
   }
-
-/*   onLoadFlight(name: string) {
-    this.navCtrl.push(SingleFlightPage, {flightName: name});
-  } */
-
+  onLoadFlight(i: number) {
+    this.navCtrl.push(SingleFlightPage, {index: i});
+  }
 }
+

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FlightsService } from '../../../services/flights.service';
+import { Flight } from '../../../models/Flight';
 
 /**
  * Generated class for the SingleFlightPage page.
@@ -12,16 +14,17 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-single-flight',
   templateUrl: 'single-flight.html',
 })
-export class SingleFlightPage {
+export class SingleFlightPage implements OnInit{
 
-  name: string;
+  index: number;
+  flights: Flight[];
 
-  constructor(public navParams: NavParams) {
+  constructor(public navParams: NavParams,
+              private flightsService: FlightsService) {
   }
 
   ngOnInit() {
-    this.name = this.navParams.get('flightName');
-    
+    this.index = this.navParams.get('index');
+    this.flights = this.flightsService.flights[this.index]
   }
-
 }
