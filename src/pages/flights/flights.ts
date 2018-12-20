@@ -22,8 +22,12 @@ export class FlightsPage {
   constructor(public navCtrl: NavController, private flightsService: FlightsService) {
   }
 
-  onLoadFlight(name: string) {
-    this.navCtrl.push(SingleFlightPage, {flightName: name});
+  ionViewDidLoad() {
+    this.flights = this.flightsService.flights;
   }
+
+/*   onLoadFlight(name: string) {
+    this.navCtrl.push(SingleFlightPage, {flightName: name});
+  } */
 
 }
