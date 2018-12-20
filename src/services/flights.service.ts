@@ -2,6 +2,7 @@ import { Flight } from "../models/Flight";
 
 export class FlightsService {
     flights: Flight[] = {} as any;
+
     constructor() {
         this.flights = [
             {

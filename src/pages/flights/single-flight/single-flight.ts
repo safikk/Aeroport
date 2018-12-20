@@ -17,7 +17,7 @@ import { Flight } from '../../../models/Flight';
 export class SingleFlightPage implements OnInit{
 
   index: number;
-  flights: Flight[];
+  flight: Flight;
 
   constructor(public navParams: NavParams,
               private flightsService: FlightsService) {
@@ -25,6 +25,8 @@ export class SingleFlightPage implements OnInit{
 
   ngOnInit() {
     this.index = this.navParams.get('index');
-    this.flights = this.flightsService.flights[this.index]
+
+    this.flight = this.flightsService.flights[this.index];
+
   }
 }

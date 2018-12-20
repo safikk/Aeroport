@@ -16,8 +16,9 @@
 <ion-content padding>
 <ion-list>
     <button
-     ion-button (click)="onLoadFlight('vol1')" 
-     *ngFor="let flight of flights" 
+     *ngFor="let flight of flights; let i = index" 
+     ion-button
+     (click)="onLoadFlight(i)" 
      >     
      {{ flight.flight.number }}
 
